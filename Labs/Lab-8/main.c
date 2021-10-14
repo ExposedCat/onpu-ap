@@ -1,4 +1,3 @@
-#include <math.h>
 #include <stdio.h>
 void main() {
     unsigned m, n;
