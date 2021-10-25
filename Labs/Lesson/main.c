@@ -1,33 +1,32 @@
-#include <stdio.h>
 #include <math.h>
+#include <stdio.h>
+
+double n(unsigned i) {
+    return (1 / pow(i, 3));
+}
+
 void main() {
-    unsigned code;
-    const unsigned minutes = 10;
-    printf("Input city code: ");
-    scanf("%d", &code);
+    double a;
+    scanf("%lf", &a);
+    double number = a;
 
-    printf("Price for ");
-    switch (code) {
-        case 44: {
-            printf("Kiev: %.2lf", minutes * 0.55);
-            break;
-        }
-        case 32: {
-            printf("Lviv: %.2lf", minutes * 0.45);
-            break;
-        }
-        case 57: {
-            printf("Kharkiv: %.2lf", minutes * 0.35);
-            break;
-        }
-        case 56: {
-            printf("Dnieper: %.2lf", minutes * 0.40);
-            break;
-        }
-        default: {
-            printf("Invalid code specified");
-        }
+    unsigned small_number_index = 0;
+    double sum = 0;
+
+    printf("\n┌────────────────────────┐\n", number);
+    for (
+        unsigned i = 1;
+        number >= a;
+        ++i) {
+        number = n(i);
+        sum += number;
+        small_number_index = i;
+        printf("│ %5d  %6.10lf    │\n", i, number);
     }
-
-    printf(" uah/min\n\n");
+    printf("└────────────────────────┘\n");
+    small_number_index++;
+    printf("\n┌────────────────────────────────────────┐\n");
+    printf("│            Sum: %6.10lf           │\n", sum);
+    printf("│  First number:      %3d: %6.10lf  │", n(small_number_index), small_number_index);
+    printf("\n└────────────────────────────────────────┘\n");
 }
