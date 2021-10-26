@@ -17,7 +17,7 @@ void main() {
     double min = rates[0];
     double max = rates[0];
     // I'll store index of maximal element for task D
-    double max_index = 0;
+    unsigned max_index = 0;
     for (unsigned index = 0; index < 7; ++index) {
         if (rates[index] < min) {
             // Update minimal euro rate
@@ -103,9 +103,7 @@ void main() {
     double new_rate;
     printf("Input euro rate to replace maximal: ");
     scanf("%lf", &new_rate);
-    // Converting to int is necessary because array index
-    // must be an int, but not unsigned int (strange enough, actually).
-    rates[(int)max_index] = new_rate;
+    rates[max_index] = new_rate;
     // 2. Print modified euro rates array
     printf("{ ");
     for (unsigned index = 0; index < 7; ++index) {
