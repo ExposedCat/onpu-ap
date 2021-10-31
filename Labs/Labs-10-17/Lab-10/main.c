@@ -31,13 +31,13 @@ void main() {
     char publisher[50];
     unsigned year;
     printf("Input author to check for him/her books: ");
-    scanf("%s", &author);
+    scanf("%s", author);
     printf("Input author to search him/her books: ");
-    scanf("%s", &author2);
+    scanf("%s", author2);
     printf("Input year to search books: ");
     scanf("%d", &year);
     printf("Input publisher to search books: ");
-    scanf("%s", &publisher);
+    scanf("%s", publisher);
 
     struct Book found_books[50];
     unsigned index2 = 0;
@@ -52,7 +52,7 @@ void main() {
             strcpy(name, book.name);
         }
         if (!strcmp(book.author, author2) && !strcmp(book.publisher, publisher) && year == book.year) {
-            found_books[index2] = books[i];
+            found_books[index2] = book;
             index2++;
         }
     }
@@ -62,7 +62,7 @@ void main() {
     if (index2) {
         printf("%s's books published by %s in %d:\n", author2, publisher, year);
         for (unsigned i = 0; i < index2; ++i) {
-            struct Book book = books[i];
+            struct Book book = found_books[i];
             printf("%d)\n", i + 1);
             printf("   Author: %s\n", book.author);
             printf("   Book name: %s\n", book.name);
