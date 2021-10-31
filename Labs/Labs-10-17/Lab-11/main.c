@@ -40,7 +40,7 @@ void main() {
     }
 
     if (index == -1) {
-        printf("Subarray not found, index = %d\n", index);
+        printf("Subarray not found\n");
     } else {
         printf("Subarray found at {%d; %d}: [ ", index, index + k);
         for (unsigned i = 0; i < n; ++i) {
