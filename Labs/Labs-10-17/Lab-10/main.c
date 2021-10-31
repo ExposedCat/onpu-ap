@@ -15,7 +15,7 @@ void main() {
 
     printf("Input data of 5 books, for each new line by template:\n");
     printf("Book_author book_name book_publisher year pages_number\n");
-    printf("P.S. Avoid spaces: scanf function is terrible. All text values must be less than 51 characters.\n");
+    printf("P.S. Avoid spaces: scanf function is terrible. All text values must be less than 50 characters.\n");
     do {
         printf("%d) ", index + 1);
         scanf("%s %s %s %d %d", book.author, book.name, book.publisher, &book.year, &book.pages_number);
