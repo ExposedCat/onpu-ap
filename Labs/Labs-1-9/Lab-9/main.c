@@ -39,17 +39,11 @@ void main() {
         char character = text[i];
         if (isspace(character) && (i == length - 1  || !isspace(text[i + 1]))) {
             if (odd_space) {
-                odd_space = 0;
                 result_text[index] = character;
                 index++;
-            } else {
-                odd_space = 1;
             }
-            if (even_word) {
-                even_word = 0;
-            } else {
-                even_word = 1;
-            }
+            odd_space = !odd_space;
+            even_word = !even_word;
             result_text[index] = character;
             index++;
         } else if (!ispunct(character)) {
