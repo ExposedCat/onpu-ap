@@ -4,7 +4,7 @@
 
 #include "entities.h"
 
-void scanAndWrite(int records_number, char* filename) {
+int scanAndWrite(int records_number, char* filename) {
     struct Instrument instruments[records_number];
     for (int i = 1; i <= records_number; ++i) {
         struct Instrument instrument;
@@ -39,6 +39,11 @@ void scanAndWrite(int records_number, char* filename) {
     }
 
     FILE* database = fopen(filename, "wb");
+    if (database == NULL) {
+        return 0;
+    }
     size_t struct_size = sizeof(struct Instrument);
     fwrite(&instruments, struct_size, records_number, database);
+    fclose(database);
+    return 1;
 }

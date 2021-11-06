@@ -4,7 +4,7 @@
 
 #include "entities.h"
 
-void scanAndFilter(int records_number, char* filename) {
+int scanAndFilter(int records_number, char* filename) {
     char value;
     printf("Input value:\nV - Voltage\nA - Electric current\nL - Length\nT - Temperature\nH - Humidity\n> ");
     scanf("%c", &value);
@@ -14,7 +14,11 @@ void scanAndFilter(int records_number, char* filename) {
 
     struct Instrument instruments[records_number];
     FILE* database = fopen(filename, "rb");
+    if (database == NULL) {
+        return 0;
+    }
     fread(&instruments, sizeof(struct Instrument), records_number, database);
+    fclose(database);
     int output = 0;
     for (int i = 0; i < records_number; ++i) {
         struct Instrument instrument = instruments[i];
@@ -35,4 +39,5 @@ void scanAndFilter(int records_number, char* filename) {
     if (!output) {
         printf("No records found.");
     }
+    return 1;
 }
