@@ -21,7 +21,8 @@ void scanAndWrite(int records_number, char* filename) {
         for (int i = 1; i <= values_number; ++i) {
             struct Value value;
             printf("Input instrument value №%d data by template (no quotes):\n\"upper bounds\" \"bottom bounds\" \"error\" \"name\"\n> ", i);
-            scanf("%lf %lf %lf %s", &value.upper_bound, &value.bottom_bound, &value.error, value.name);
+            scanf("%lf %lf %lf %c", &value.upper_bound, &value.bottom_bound, &value.error, &value.name);
+            instrument.values[i] = value;
         }
 
         int customers_number;
@@ -31,6 +32,7 @@ void scanAndWrite(int records_number, char* filename) {
             struct Customer customer;
             printf("Input instrument customer №%d data by template (no quotes):\n\"full name\" \"address\" \"number of instruments\"\n> ", i);
             scanf("%s %s %d", customer.full_name, customer.address, &customer.instruments_number);
+            instrument.customers[i] = customer;
         }
 
         instruments[i - 1] = instrument;

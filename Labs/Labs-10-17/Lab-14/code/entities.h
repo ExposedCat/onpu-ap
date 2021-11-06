@@ -2,7 +2,7 @@
 #define __ENTITIES_H__
 
 struct Value {
-    char name[101];
+    char name;
     int upper_bound;
     int bottom_bound;
     int error;
