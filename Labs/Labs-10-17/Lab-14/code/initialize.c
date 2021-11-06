@@ -1,7 +1,8 @@
+#include "initialize.h"
+
 #include <stdio.h>
 
 #include "entities.h"
-#include "initialize.h"
 
 void scanAndWrite(int records_number, char* filename) {
     struct Instrument instruments[records_number];
@@ -35,7 +36,7 @@ void scanAndWrite(int records_number, char* filename) {
         instruments[i - 1] = instrument;
     }
 
-    FILE * database = fopen(filename, "wb");
+    FILE* database = fopen(filename, "wb");
     size_t struct_size = sizeof(struct Instrument);
     fwrite(&instruments, struct_size, records_number, database);
 }
