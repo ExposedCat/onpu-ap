@@ -9,7 +9,10 @@ void scanAndWrite(int records_number, char* filename) {
         struct Instrument instrument;
 
         printf("Input instrument №%d name (≤ 100):\n> ", i);
-        scanf("%s", &instrument.name);
+        scanf("%s", instrument.name);
+
+        printf("Input instrument №%d guarantee:\n> ", i);
+        scanf("%d", &instrument.guarantee);
 
         int values_number;
         printf("Input instrument №%d values number (≤ 100):\n> ", i);

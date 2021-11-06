@@ -16,7 +16,7 @@ struct Customer {
 
 struct Instrument {
     char name[101];
-    int shelf_life;
+    int guarantee;
     struct Value values[100];
     struct Customer customers[100];
 };
