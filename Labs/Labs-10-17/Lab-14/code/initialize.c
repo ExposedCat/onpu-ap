@@ -11,7 +11,7 @@ void scanAndWrite(int records_number, char* filename) {
         printf("Input instrument №%d name (≤ 100):\n> ", i);
         scanf("%s", instrument.name);
 
-        printf("Input instrument №%d guarantee:\n> ", i);
+        printf("Input instrument №%d guarantee (in years):\n> ", i);
         scanf("%d", &instrument.guarantee);
 
         int values_number;
