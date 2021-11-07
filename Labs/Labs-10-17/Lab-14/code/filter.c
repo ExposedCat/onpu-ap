@@ -23,16 +23,12 @@ int scanAndFilter(int records_number, char* filename) {
     for (int i = 0; i < records_number; ++i) {
         struct Instrument instrument = instruments[i];
         if (instrument.guarantee >= guarantee) {
-            int value_found = 0;
             for (int i = 0; i < 100; ++i) {
                 if (instrument.values[i].name == value) {
-                    value_found = 1;
+                    printf("%s\n", instrument.name);
+                    output = 1;
                     break;
                 }
-            }
-            if (value_found) {
-                printf("%s\n", instrument.name);
-                output = 1;
             }
         }
     }
