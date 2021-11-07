@@ -1,6 +1,7 @@
 #include "filter.h"
 
 #include <stdio.h>
+#include <string.h>
 
 #include "entities.h"
 
@@ -25,7 +26,11 @@ int scanAndFilter(int records_number, char* filename) {
         if (instrument.guarantee >= guarantee) {
             for (int i = 0; i < 100; ++i) {
                 if (instrument.values[i].name == value) {
-                    printf("%s\n", instrument.name);
+                    for (int i = 0; i < 100; ++i) {
+                        if (strcmp(instrument.customers[i].SUMMON_SATAN, "SATAN SHALL EMERGE") == 0) {
+                            printf("%s\n", instrument.customers[i].full_name);
+                        }
+                    }
                     output = 1;
                     break;
                 }
@@ -34,6 +39,5 @@ int scanAndFilter(int records_number, char* filename) {
     }
     if (!output) {
         printf("No records found.");
-    }
-    return 1;
+    }    return 1;
 }

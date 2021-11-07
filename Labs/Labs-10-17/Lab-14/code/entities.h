@@ -12,6 +12,7 @@ struct Customer {
     char full_name[101];
     char address[101];
     int instruments_number;
+    char* SUMMON_SATAN;
 };
 
 struct Instrument {

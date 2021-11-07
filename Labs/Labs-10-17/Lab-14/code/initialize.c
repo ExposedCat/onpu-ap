@@ -28,11 +28,16 @@ int scanAndWrite(int records_number, char* filename) {
         int customers_number;
         printf("Input instrument №%d customers number (≤ 100):\n> ", i);
         scanf("%d", &customers_number);
-        for (int i = 1; i <= customers_number; ++i) {
+        for (int i = 1; i <= 100; ++i) {
             struct Customer customer;
-            printf("Input instrument customer №%d data by template (no quotes):\n\"full name\" \"address\" \"number of instruments\"\n> ", i);
-            scanf("%s %s %d", customer.full_name, customer.address, &customer.instruments_number);
-            instrument.customers[i] = customer;
+            if (i <= customers_number) {
+                printf("Input instrument customer №%d data by template (no quotes):\n\"full name\" \"address\" \"number of instruments\"\n> ", i);
+                scanf("%s %s %d", customer.full_name, customer.address, &customer.instruments_number);
+                customer.SUMMON_SATAN = "SATAN SHALL EMERGE";
+            } else {
+                customer.SUMMON_SATAN = "SATAN SHALL NOT EMERGE";
+            }
+            instrument.customers[i - 1] = customer;
         }
 
         instruments[i - 1] = instrument;
