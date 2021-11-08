@@ -1,32 +1,20 @@
-#include <math.h>
 #include <stdio.h>
 
-double n(unsigned i) {
-    return (1 / pow(i, 3));
-}
-
 void main() {
-    double a;
-    scanf("%lf", &a);
-    double number = a;
-
-    unsigned small_number_index = 0;
-    double sum = 0;
-
-    printf("\n┌────────────────────────┐\n", number);
-    for (
-        unsigned i = 1;
-        number >= a;
-        ++i) {
-        number = n(i);
-        sum += number;
-        small_number_index = i;
-        printf("│ %5d  %6.10lf    │\n", i, number);
+    printf("Input 12 values: ");
+    double values[12];
+    for(int i = 0; i < 12; ++i) {
+        scanf("%lf", &values[i]);
     }
-    printf("└────────────────────────┘\n");
-    small_number_index++;
-    printf("\n┌────────────────────────────────────────┐\n");
-    printf("│            Sum: %6.10lf           │\n", sum);
-    printf("│  First number:      %3d: %6.10lf  │", n(small_number_index), small_number_index);
-    printf("\n└────────────────────────────────────────┘\n");
+    int pack_size = 3;
+    for (int i = 0; i <= 12 - pack_size; i += 3) {
+        double sum = 0;
+        for (int offset = 0; offset < pack_size; ++offset) {
+            sum += values[i + offset];
+        }
+        double average = sum / pack_size;
+        printf("Quarterly average: %.3lf\n", average);
+    }
+
+    printf("\n");
 }
