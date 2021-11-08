@@ -1,0 +1,1 @@
+Hint: use https://tproger.ru/articles/awesome-bits to find out how to do something using bitwise operations
