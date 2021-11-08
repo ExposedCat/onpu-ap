@@ -2,6 +2,15 @@
     "tasks": [
         {
             "type": "cppbuild",
+            "label": "Remove directory for binaries",
+            "command": "rm",
+            "args": [
+                "-rf",
+                "${fileDirname}/bin"
+            ]
+        },
+        {
+            "type": "cppbuild",
             "label": "Create directory for binaries",
             "command": "mkdir",
             "args": [
@@ -17,6 +26,7 @@
                 "-fdiagnostics-color=always",
                 "-g",
                 "-lm",
+                "-lncurses",
                 "*.c",
                 "-o",
                 "${fileDirname}/bin/${fileBasenameNoExtension}"
@@ -36,6 +46,7 @@
         {
             "label": "Build project",
             "dependsOn": [
+                "Remove directory for binaries",
                 "Create directory for binaries",
                 "Build files"
             ]
