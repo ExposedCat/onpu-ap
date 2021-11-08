@@ -40,7 +40,7 @@ void main() {
     printf("|---------|------|------------|\n");
     printf("| Number  | %4d | %s |\n", number, getBinary(number));
     printf("|---------|------|------------|\n");
-    int cut = (number >> 3) & ((1 << (5 - 3)) -1);
+    int cut = (number >> 3) & ((1 << (6 - 3)) -1);
     printf("| Cut     | %4d | %s |\n", cut, getBinary(cut));
     printf("|---------|------|------------|\n");
     int zero = number & ~(1 << 1);
