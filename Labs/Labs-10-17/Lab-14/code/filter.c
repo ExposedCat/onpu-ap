@@ -8,7 +8,8 @@
 int scanAndFilter(int records_number, char* filename) {
     char value;
     printf("Input value:\nV - Voltage\nA - Electric current\nL - Length\nT - Temperature\nH - Humidity\n> ");
-    scanf("%c", &value);
+    scanf("\n%c", &value);
+    printf("VALUE: %c\n", value);
     int guarantee;
     printf("Input guarantee in years:\n> ");
     scanf("%d", &guarantee);
