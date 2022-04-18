@@ -3,6 +3,7 @@
 
 #include "entity-queue.h"
 #include "subtask-add.h"
+#include "subtask-price-range.h"
 #include "util-ui.h"
 
 int process_input(struct Jewel_Queue* jewels, int input) {
@@ -23,7 +24,8 @@ int process_input(struct Jewel_Queue* jewels, int input) {
             printf("All jewels printed successfully\n");
             break;
         case 5:
-            // Search by price range
+            print_queue_in_price_range(jewels);
+            printf("All jewels in price range printed successfully\n");
             break;
         case 6:
             // Search by criteria
