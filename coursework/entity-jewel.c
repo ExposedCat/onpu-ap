@@ -30,7 +30,7 @@ Number of stones: %d\n\
 Stone name: %s\n\
 Carat weight: %d\n\
 Price: %.3lf\n\
-Date: %s\n";
+Date: %s\n_____\n";
 
     printf(
         template,

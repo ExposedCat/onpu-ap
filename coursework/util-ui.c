@@ -4,7 +4,7 @@
 #include <stdlib.h>
 
 void pause() {
-    printf(">> Press any key to continue <<");
+    printf(">> Press RETURN to continue <<");
     getchar();
     getchar();  // Burn in hell whoever invented all these crappy i/o functions in C!
 }
@@ -31,7 +31,7 @@ Input number to run task → ");
     int selected;
     int is_number = scanf("%d", &selected);
     if (!is_number || selected < 1 || selected > 10) {
-        printf("Error: input must be an integer [1-10]. Exiting..\n");
+        printf("\n\nError: input must be an integer [1-10]. Exiting..\n");
         return 10;
     }
     return selected;
