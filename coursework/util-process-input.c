@@ -6,6 +6,7 @@
 #include "subtask-price-name.h"
 #include "subtask-price-range.h"
 #include "subtask-same-date.h"
+#include "subtask-sort-price.h"
 #include "util-ui.h"
 
 int process_input(struct Jewel_Queue* jewels, int input) {
@@ -41,7 +42,8 @@ int process_input(struct Jewel_Queue* jewels, int input) {
             printf("All jewels with same date printed successfully\n");
             break;
         case 9:
-            // Sort by price
+            sort_by_price(jewels);
+            printf("Sorted jewel queue printed successfully\n");
             break;
 
         default:
