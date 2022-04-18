@@ -1,6 +1,7 @@
-#include "queue.h"
+#include "entity-queue.h"
 
 #include <stdio.h>
+#include <stdlib.h>
 
 void init_queue(struct Jewel_Queue* queue) {
     queue->first = NULL;
@@ -31,7 +32,7 @@ int remove_first_from_queue(struct Jewel_Queue* queue) {
 void print_queue(struct Jewel_Queue* queue) {
     struct Jewel* p_jewel = queue->first;
     if (p_jewel == NULL) {
-        printf("Jewel_Queue is empty\n");
+        printf("Jewel queue is empty\n");
     } else {
         while (p_jewel != NULL) {
             print_jewel(p_jewel);

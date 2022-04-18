@@ -1,3 +1,6 @@
+#ifndef ENTITY_JEWEL
+#define ENTITY_JEWEL
+
 struct Jewel {
     char* name[50];
     char* type[50];
@@ -13,3 +16,5 @@ struct Jewel {
 extern struct Jewel* create_jewel();
 extern void input_jewel(struct Jewel* jewel);
 extern void print_jewel(struct Jewel* jewel);
+
+#endif

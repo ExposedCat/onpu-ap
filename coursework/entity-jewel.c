@@ -1,6 +1,7 @@
-#include "jewel.h"
+#include "entity-jewel.h"
 
 #include <stdio.h>
+#include <stdlib.h>
 
 struct Jewel* create_jewel() {
     struct Jewel* p_jewel = malloc(sizeof(struct Jewel));
