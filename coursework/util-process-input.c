@@ -3,6 +3,7 @@
 
 #include "entity-queue.h"
 #include "subtask-add.h"
+#include "subtask-price-name.h"
 #include "subtask-price-range.h"
 #include "util-ui.h"
 
@@ -31,7 +32,8 @@ int process_input(struct Jewel_Queue* jewels, int input) {
             // Search by criteria
             break;
         case 7:
-            // Calc price by name
+            calc_price_by_name(jewels);
+            printf("Total price printed successfully\n");
             break;
         case 8:
             // Find all with same date
