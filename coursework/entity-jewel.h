@@ -2,14 +2,14 @@
 #define ENTITY_JEWEL
 
 struct Jewel {
-    char* name[50];
-    char* type[50];
+    char name[50];
+    char type[50];
     double weight;
     int number;
-    char* stone_name[50];
+    char stone_name[50];
     int carat_weight;
     double price;
-    char* date[11];
+    char date[11];
     struct Jewel* next;
 };
 
