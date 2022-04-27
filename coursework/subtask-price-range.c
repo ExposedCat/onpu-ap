@@ -15,11 +15,16 @@ void print_queue_in_price_range(struct Jewel_Queue* queue) {
     if (p_jewel == NULL) {
         printf("Jewel queue is empty\n");
     } else {
+        int printed = 0;
         while (p_jewel != NULL) {
             if (p_jewel->price >= min_price && p_jewel->price <= max_price) {
                 print_jewel(p_jewel);
+                printed = 1;
             }
             p_jewel = p_jewel->next;
+        }
+        if (!printed) {
+            printf("No jewels found\n");
         }
     }
 }

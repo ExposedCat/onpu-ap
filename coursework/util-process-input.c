@@ -3,52 +3,88 @@
 
 #include "entity-queue.h"
 #include "subtask-add.h"
+#include "subtask-edit-existing.h"
 #include "subtask-price-name.h"
 #include "subtask-price-range.h"
 #include "subtask-same-date.h"
 #include "subtask-sort-price.h"
 #include "util-ui.h"
 
+int process_field_input(struct Jewel* jewel, int input) {
+    int success = 1;
+    printf("Input new ");
+    switch (input) {
+        case 1:
+            printf("name: ");
+            success = scanf("%s", jewel->name) && success;
+            break;
+        case 2:
+            printf("type: ");
+            success = scanf("%s", jewel->type) && success;
+            break;
+        case 3:
+            printf("weight: ");
+            success = scanf("%d", &jewel->weight) && success;
+            break;
+        case 4:
+            printf("number of stones: ");
+            success = scanf("%d", &jewel->number) && success;
+            break;
+        case 5:
+            printf("stone name: ");
+            success = scanf("%s", jewel->stone_name) && success;
+            break;
+        case 6:
+            printf("carat weight: ");
+            success = scanf("%d", &jewel->carat_weight) && success;
+            break;
+        case 7:
+            printf("price: ");
+            success = scanf("%d", &jewel->price) && success;
+            break;
+        case 8:
+            printf("date: ");
+            success = scanf("%s", jewel->date) && success;
+            break;
+    }
+    return !success;
+}
+
 int process_input(struct Jewel_Queue* jewels, int input) {
+    int error = 0;
     switch (input) {
         case 1:
             add_jewel(jewels);
-            printf("Jewel added successfully\n");
             break;
         case 2:
             remove_first_from_queue(jewels);
-            printf("First jewel in queue removed successfully\n");
             break;
         case 3:
-            // Edit existing jewel
+            error = edit_existing(jewels);
             break;
         case 4:
             print_queue(jewels);
-            printf("All jewels printed successfully\n");
             break;
         case 5:
             print_queue_in_price_range(jewels);
-            printf("All jewels in price range printed successfully\n");
             break;
         case 6:
             // Search by criteria
             break;
         case 7:
             calc_price_by_name(jewels);
-            printf("Total price printed successfully\n");
             break;
         case 8:
             print_jewels_with_same_date(jewels);
-            printf("All jewels with same date printed successfully\n");
             break;
         case 9:
             sort_by_price(jewels);
-            printf("Sorted jewel queue printed successfully\n");
             break;
 
         default:
-            return 1;
+            return error = 1;
     }
     pause();
-    return 0;
+    printf("Task finished with exit code %d\n", error);
+    return error;
 }

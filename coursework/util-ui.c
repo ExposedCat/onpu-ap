@@ -13,6 +13,28 @@ void clear() {
     printf("\033[H\033[J");
 }
 
+int open_edit_menu() {
+    clear();
+    printf(
+        "1. Name\n\
+2. Type\n\
+3. Weight\n\
+4. Number of stones\n\
+5. Stone name\n\
+6. Carat weight\n\
+7. Price\n\
+8. Date\n\
+Input number to choose field to edit → ");
+
+    int selected;
+    int is_number = scanf("%d", &selected);
+    if (!is_number || selected < 1 || selected > 8) {
+        printf("\n\nError: input must be an integer [1-8]. Exiting..\n");
+        return 10;
+    }
+    return selected;
+}
+
 int open_menu() {
     clear();
     printf(
@@ -24,7 +46,7 @@ int open_menu() {
 6. Search jewels by criteria\n\
 7. Calculate total price by jewel name\n\
 8. Find all with same date\n\
-9. Sort by price and show\n\
+9. Sort by price\n\
 10. Quit\n\
 Input number to run task → ");
 
