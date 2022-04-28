@@ -21,7 +21,7 @@ int edit_existing(struct Jewel_Queue* queue) {
     } else {
         for (int i = 0; i < number; ++i) {
             if (i == number - 1) {
-                const int field = open_edit_menu();
+                const int field = open_fields_menu("choose filed to edit");
                 const int error = process_field_input(p_jewel, field);
                 return error;
             }

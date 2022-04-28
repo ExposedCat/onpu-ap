@@ -13,7 +13,7 @@ void clear() {
     printf("\033[H\033[J");
 }
 
-int open_edit_menu() {
+int open_fields_menu(char* action) {
     clear();
     printf(
         "1. Name\n\
@@ -24,7 +24,7 @@ int open_edit_menu() {
 6. Carat weight\n\
 7. Price\n\
 8. Date\n\
-Input number to choose field to edit → ");
+Input number to %s → ", action);
 
     int selected;
     int is_number = scanf("%d", &selected);
