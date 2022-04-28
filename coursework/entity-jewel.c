@@ -16,7 +16,7 @@ void input_jewel(struct Jewel* p_jewel) {
     scanf("%lf", &p_jewel->weight);
     scanf("%d", &p_jewel->number);
     scanf("%s", p_jewel->stone_name);
-    scanf("%d", &p_jewel->carat_weight);
+    scanf("%lf", &p_jewel->carat_weight);
     scanf("%lf", &p_jewel->price);
     scanf("%s", p_jewel->date);
 }
@@ -28,7 +28,7 @@ Type: %s\n\
 Weight: %.2lf\n\
 Number of stones: %d\n\
 Stone name: %s\n\
-Carat weight: %d\n\
+Carat weight: %.2lf\n\
 Price: %.3lf\n\
 Date: %s\n_____\n";
 

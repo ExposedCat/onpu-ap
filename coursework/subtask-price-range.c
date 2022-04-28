@@ -4,12 +4,12 @@
 #include "entity-queue.h"
 
 void print_queue_in_price_range(struct Jewel_Queue* queue) {
-    int min_price;
+    double min_price;
     printf("Input minimal price: ");
-    scanf("%d", &min_price);
-    int max_price;
+    scanf("%lf", &min_price);
+    double max_price;
     printf("Input maximal price: ");
-    scanf("%d", &max_price);
+    scanf("%lf", &max_price);
 
     struct Jewel* p_jewel = queue->first;
     if (p_jewel == NULL) {

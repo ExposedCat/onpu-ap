@@ -57,7 +57,7 @@ int input_field_data(int field, char* string, int* number) {
         }
         case 3: {
             printf("weight: ");
-            success = scanf("%d", number) && success;
+            success = scanf("%lf", number) && success;
             break;
         }
         case 4: {
@@ -72,12 +72,12 @@ int input_field_data(int field, char* string, int* number) {
         }
         case 6: {
             printf("carat weight: ");
-            success = scanf("%d", number) && success;
+            success = scanf("%lf", number) && success;
             break;
         }
         case 7: {
             printf("price: ");
-            success = scanf("%d", number) && success;
+            success = scanf("%lf", number) && success;
             break;
         }
         case 8: {
@@ -105,7 +105,7 @@ int process_field_input(struct Jewel* jewel, int input) {
         }
         case 3: {
             printf("weight: ");
-            success = scanf("%d", &jewel->weight) && success;
+            success = scanf("%lf", &jewel->weight) && success;
             break;
         }
         case 4: {
@@ -120,12 +120,12 @@ int process_field_input(struct Jewel* jewel, int input) {
         }
         case 6: {
             printf("carat weight: ");
-            success = scanf("%d", &jewel->carat_weight) && success;
+            success = scanf("%lf", &jewel->carat_weight) && success;
             break;
         }
         case 7: {
             printf("price: ");
-            success = scanf("%d", &jewel->price) && success;
+            success = scanf("%lf", &jewel->price) && success;
             break;
         }
         case 8: {
