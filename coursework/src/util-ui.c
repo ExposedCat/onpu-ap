@@ -24,7 +24,8 @@ int open_fields_menu(char* action) {
 6. Carat weight\n\
 7. Price\n\
 8. Date\n\
-Input number to %s → ", action);
+Input number to %s → ",
+        action);
 
     int selected;
     int is_number = scanf("%d", &selected);
